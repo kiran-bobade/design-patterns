@@ -44,7 +44,7 @@ export class StaticFileMiddleware extends BaseMiddleware {
 export class Pipeline {
   private _middlewares: BaseMiddleware[] = [];
 
-  addMiddleware(middleware: BaseMiddleware): any {
+  use(middleware: BaseMiddleware): any {
     if (this._middlewares.length > 0) {
       const previousMiddleware = this._middlewares[this._middlewares.length - 1];
       this._middlewares.push(middleware);
@@ -72,7 +72,7 @@ export class Pipeline {
 
 
   const pipeline = new Pipeline();
-  pipeline.addMiddleware(new AuthenticationMiddleware());
-  pipeline.addMiddleware(new AuthorizationMiddleware());
-  pipeline.addMiddleware(new StaticFileMiddleware());
+  pipeline.use(new AuthenticationMiddleware());
+  pipeline.use(new AuthorizationMiddleware());
+  pipeline.use(new StaticFileMiddleware());
   pipeline.execute();
