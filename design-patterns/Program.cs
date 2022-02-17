@@ -2,23 +2,39 @@
 using Design_Patterns.Structural.Adapter;
 using Design_Patterns.Structural.Decorator;
 
+namespace Design_Patterns
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ShowTitle("Adapter");
+            IAdapter<ICustomer> adapter = new CustomerAdapter(LegacyApi.GetCustomer());
+            ICustomer customer = adapter.Adapt();
+            Console.WriteLine($"{customer}");
 
-Console.WriteLine("Adapter Example:");
-Console.WriteLine("-----------------------");
-IAdapter<ICustomer> adapter = new CustomerAdapter(LegacyApi.GetCustomer());
-ICustomer customer = adapter.Adapt();
-Console.WriteLine($"{customer}");
+            ShowTitle("Decorator");
+            Notifier notifier = new EmailNotifier("kiranbobde2607@gmail.com");
+            notifier = new SmsNotifier(notifier, "9503678957");
+            notifier.Send();
 
-Console.WriteLine("Decorator Example:");
-Console.WriteLine("-----------------------");
-Notifier notifier = new EmailNotifier("kiranbobde2607@gmail.com");
-notifier = new SmsNotifier(notifier, "9503678957");
-notifier.Send();
+            ShowTitle("Template Method");
+            Component userDetails = new UserDetailComponent();
+            userDetails.Render();
 
-Console.WriteLine();
-Console.WriteLine("Template Method Example:");
-Console.WriteLine("-----------------------");
-Component userDetails = new UserDetailComponent();
-userDetails.Render();
+            Console.ReadLine();
+        }
 
-Console.ReadLine();
+        static void ShowTitle(string Title)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"{Title} Example:");
+            Console.WriteLine("-----------------------");
+        }
+    }
+}
+
+
+
+
+
