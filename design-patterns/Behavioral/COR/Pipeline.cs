@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace design_patterns.Behavioral.COR
+namespace Design_Patterns.Behavioral.COR
 {
     internal class Pipeline
     {

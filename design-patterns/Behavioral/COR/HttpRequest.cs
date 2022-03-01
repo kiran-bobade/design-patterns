@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace design_patterns.Behavioral.COR
+namespace Design_Patterns.Behavioral.COR
 {
     internal class HttpRequest : IRequest
     {

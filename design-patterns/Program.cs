@@ -1,4 +1,4 @@
-﻿using design_patterns.Behavioral.COR;
+﻿using Design_Patterns.Behavioral.COR;
 using Design_Patterns.Behavioral.TemplateMethod;
 using Design_Patterns.Structural.Adapter;
 using Design_Patterns.Structural.Decorator;
