@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace design_patterns.Behavioral.TemplateMethod
+namespace Design_Patterns.Behavioral.TemplateMethod
 {
     public abstract class Component
     {

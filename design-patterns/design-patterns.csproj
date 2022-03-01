@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Behavioral\COR\" />
+    <None Remove="Behavioral\TemplateMethod\Component.cs~RF103f51d3.TMP" />
   </ItemGroup>
 
 </Project>

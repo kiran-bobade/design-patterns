@@ -1,4 +1,4 @@
-﻿namespace design_patterns.Behavioral.TemplateMethod
+﻿namespace Design_Patterns.Behavioral.TemplateMethod
 {
     public class UserDetailComponent : Component
     {

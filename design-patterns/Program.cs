@@ -1,4 +1,5 @@
-﻿using design_patterns.Behavioral.TemplateMethod;
+﻿using design_patterns.Behavioral.COR;
+using Design_Patterns.Behavioral.TemplateMethod;
 using Design_Patterns.Structural.Adapter;
 using Design_Patterns.Structural.Decorator;
 
@@ -21,6 +22,13 @@ namespace Design_Patterns
             ShowTitle("Template Method");
             Component userDetails = new UserDetailComponent();
             userDetails.Render();
+
+            ShowTitle("Chain of Responsibility");
+            Pipeline pipeline = new Pipeline();
+            pipeline.Use(new CorsMiddleware());
+            pipeline.Use(new AuthenticationMiddleware());
+            pipeline.Execute();
+
 
             Console.ReadLine();
         }
