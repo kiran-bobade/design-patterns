@@ -12,4 +12,8 @@
     <None Remove="Behavioral\TemplateMethod\Component.cs~RF103f51d3.TMP" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Behavioral\Strategy\" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,6 @@
 ﻿using Design_Patterns.Behavioral.COR;
 using Design_Patterns.Behavioral.TemplateMethod;
+using Design_Patterns.Creational.FactoryMethod;
 using Design_Patterns.Structural.Adapter;
 using Design_Patterns.Structural.Decorator;
 
@@ -28,6 +29,13 @@ namespace Design_Patterns
             pipeline.Use(new CorsMiddleware());
             pipeline.Use(new AuthenticationMiddleware());
             pipeline.Execute();
+
+            ShowTitle("Factory Method");
+            var documentStore = new DocumentStore();
+            var invoice  = documentStore.GetDocument<Invoice>();
+            invoice.Print();
+            var estimate = documentStore.GetDocument<Estimate>();
+            estimate.Print();
 
 
             Console.ReadLine();
