@@ -1,4 +1,5 @@
-﻿using Design_Patterns.Behavioral.COR;
+﻿using design_patterns.Structural.Bridge;
+using Design_Patterns.Behavioral.COR;
 using Design_Patterns.Behavioral.TemplateMethod;
 using Design_Patterns.Creational.FactoryMethod;
 using Design_Patterns.Structural.Adapter;
@@ -37,7 +38,15 @@ namespace Design_Patterns
             var estimate = documentStore.GetDocument<Estimate>();
             estimate.Print();
 
-
+            ShowTitle("Bridge");
+            var remote = new SamsungRemote();
+            remote.SwithOn();
+            remote.VolumeUp();
+            remote.VolumeUp();
+            remote.VolumeDown();
+            remote.ChannelUp();
+            remote.ChannelUp();
+            remote.SwithOff();
             Console.ReadLine();
         }
 
